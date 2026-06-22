@@ -1,0 +1,24 @@
+{
+  "name": "smartstudenthub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "start:backend": "node backend/server.js",
+    "dev:backend": "nodemon backend/server.js",
+    "serve-web": "http-server ./web -p 8080 -c-1",
+    "mobile": "cd mobile && flutter run",
+    "dev": "npm:dev:backend",
+    "dev:all": "concurrently \"npm:dev:backend\" \"npm:mobile\"",
+    "run-all:sh": "sh ./scripts/run-all.sh",
+    "install:all": "npm install && (cd backend && npm install || true)"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "http-server": "^14.1.1",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "pdfkit": "^0.19.1"
+  }
+}
